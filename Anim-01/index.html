@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+
+		<title>Partie du titre qui change (pour que l’utilisateur s’y retrouve, sauf page d’accueil ex:contact) || partie fixe (ex:heaj) </title>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="_styles/reset.css"/>
+		<link rel="stylesheet" href="_styles/styles.css"/>
+
+	</head>
+
+	<body>
+
+		<button class="nav">
+			<div class="burger">
+				<div class="burger__bun bun1"></div>
+				<div class="burger__bun bun2"></div>
+				<div class="burger__bun bun3"></div>
+			</div>
+
+		</button>
+
+		<script>
+
+
+		var opener = document.getElementsByClassName("nav"),
+		closer= document.getElementsByClassName("nav nav--open")
+		bun1 = document.getElementsByClassName("bun1"),
+		bun2 = document.getElementsByClassName("bun2"),
+		bun3 = document.getElementsByClassName("bun3");
+
+		opener[0].addEventListener("click", function (){
+				bun1[0].classList.toggle("nav--open");
+				bun2[0].classList.toggle("nav--open");
+				bun3[0].classList.toggle("nav--open");
+				opener[0].classList.toggle("nav--open");
+		});
+
+		</script>
+
+	</body>
+</html>
