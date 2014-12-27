@@ -7,7 +7,14 @@ body {
   width:100%;
   height: 100%;
   margin: 0 auto;
+}
+main {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
   background: #E53935;
+  position: relative;
+  z-index: -999;
 }
 button {
   position: fixed;
@@ -25,6 +32,7 @@ button:focus {
   background : black;
   margin: 20px 0px;
   background: #FFFDE7;
+  z-index: 999;
 }
 
 .bun1 {
@@ -48,4 +56,48 @@ button:focus {
 
 .bun3.nav--open {
   transform: translateY(-45px) rotate(405deg);
+}
+
+.nav {
+  background: #373a47;
+  position: fixed;
+  width: 900px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -999;
+
+  transition: all .8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateX(900px);
+}
+
+.nav.nav--open {
+  transform: translateX(100px);
+}
+
+ul {
+  list-style: none;
+}
+li {
+  padding: 10px 0;
+  color: #FFFDE7;
+}
+
+.mask{
+  background: rgba(0,0,0,0.3);
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 100%;
+
+  transition: opacity .8s ease-in-out;
+
+
+}
+
+.main.nav--open .mask {
+  opacity: 1;
+  left: 0;
 }
