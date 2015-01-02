@@ -1,0 +1,188 @@
+@import url(normalize.css);	/* v3.0.2 */
+@import url(cf.css);
+/*
+@import url(fonts.css);
+*/
+
+nav ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+/* The following CSS prevents Safari from changing the font size when the device is rotated - you may or may not need this */
+body, html {
+	-webkit-text-size-adjust: 100%;
+	width: 100%;
+	height: 100%;
+	z-index: -999;
+	position: relative;/* prevents text size from changing on orientation change */
+}
+
+/* Your Style */
+
+.container {
+	height: 0%
+}
+
+/* NAVIGATION */
+
+nav {
+	width: 100%;
+	height: 44px;
+	background: lightgrey;
+	box-shadow: 0px 1px 3px #888888;
+	position: fixed;
+	top: 0;
+
+}
+
+.menu__btn {
+	position: fixed;
+	top: 8px;
+	right: 5px;
+	border: none;
+	background: none;
+	z-index: 999;
+}
+.menu__btn:focus {
+	outline: none;
+}
+.burger__bun {
+	height: 5px;
+	width: 30px;
+	margin: 3px 0px;
+	background: black;
+
+	transition: all .8s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.bun1.open {
+	-webkit-transform: translateY(8px) rotate(-405deg);
+}
+
+.bun2.open {
+	opacity: 0;
+	-webkit-transform: scale(0);
+}
+
+.bun3.open {
+	-webkit-transform: translateY(-8px) rotate(405deg);
+}
+
+.menu__el {
+	background: #C1C1C1;
+	position: fixed;
+	width: 350px;
+	height: 100%;
+	top: 0;
+	right: 0;
+	padding-top: 50px;
+
+
+	transition: all .8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	-webkit-transform: translateX(350px);
+}
+.menu__el.open {
+	-webkit-transform: translateX(100px);
+}
+.menu__el ul {
+	list-style: none;
+}
+.menu__el li{
+	margin: 15px;
+}
+.menu__el a{
+	text-decoration: none;
+	color: #FFF;
+	font-size: 12pt;
+	font-weight: bold;
+}
+.arrow {
+	position: fixed;
+	top: 18px;
+	left: 18px;
+}
+.arrow__stick {
+	height: 5px;
+	width: 20px;
+	background: black;
+
+	-webkit-transform-origin: left;
+}
+
+.stick1 {
+	-webkit-transform: translateY(5px) rotate(-45deg);
+}
+.stick2 {
+	-webkit-transform: translateY(-3px) rotate(45deg);
+}
+
+/* PAGE */
+
+/* NEWS */
+
+.page1 {
+	padding-top: 25px;
+	z-index: -999;
+	position: relative;
+}
+
+.page1__el {
+	margin: 30px 20px;
+	overflow: hidden;
+	clear: both;
+
+	transition: all .8s ease-out;
+}
+.el__photo {
+	height: 50px;
+	width: 50px;
+	background: url(../_images/cage.jpg) black no-repeat;
+	background-size: 50px 50px;
+	border-radius: 100%;
+	float: left;
+
+	transition: all .8s ease-out;
+}
+
+.el__photo.open {
+	height: 667px;
+	width: 100%;
+	background: white;
+	background-size: 700px 700px;
+	border-radius: 0%;
+	margin: 0;
+	padding: 0;
+	overflow: scroll;
+}
+
+.page1__el.open {
+	margin: 0;
+}
+
+.el__txt {
+	height: 50px;
+	width: 72%;
+	float: right;
+	font-size: 10pt;
+
+	transition: all .8s ease-out;
+}
+
+.page1__el.open .el__txt {
+	opacity: 0;
+}
+
+.el__txt p {
+	margin: 0;
+}
+.el__detail {
+	opacity: 0;
+	margin: 20px;
+
+}
+.el__detail.open {
+	opacity: 100;
+	transition: all .6s ease-in;
+	transition-delay: .8s;
+}
